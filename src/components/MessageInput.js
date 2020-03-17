@@ -43,13 +43,13 @@ return(
     <Form.Group style={{display:"flex", justifyContent:"center", alignItems: "center"}}>
         <Form.Control
         value = {textInput}
-        style={{width: '100%'}}
+        style={{border: "solid 2px blue", width: '100%'}}
         required
         type="text"
         placeholder="Type Message Here"
         onChange={e => setTextInput(e.target.value)}
         />
-        <Button type="submit" disabled={!validateInput()}>Send</Button>
+        <Button style={{backgroundColor:"blue", borderColor:"blue"}} type="submit" disabled={!validateInput()}>Send</Button>
     </Form.Group>
 
 </Form>

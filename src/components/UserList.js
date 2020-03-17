@@ -10,12 +10,12 @@ const UserList = () => {
             setUserlist(users)
         })
     }, [])
-    
+
     return(
-        <div>
-            <ul className='list-group'>
+        <div className="row">
+            <ul className="mx-auto" >
                 {userlist.map(user => (
-                    <li className='list-group-item'>
+                    <li style={{border: "solid 1px"}} className="list-group-item">
                         <p>{user.username}</p>
                     </li>
                 ))

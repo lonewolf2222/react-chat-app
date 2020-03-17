@@ -4,12 +4,12 @@ import Socket from '../utils/socket'
 
 const Display = () => {
 
-    // //const scrollToBottom = () => {
-    //     // const page = document.getElementsByTagName("page")
-    //     document.body.scrollTop = document.body.scrollHeight
-    //     }
+    const scrollToBottom = () => {
+        const page = document.getElementsByTagName("body")
+        document.body.scrollTop = document.body.scrollHeight
+        }
     
-    // scrollToBottom()
+    scrollToBottom()
 
     const[conversations, setConversations] = useState([])
 
@@ -23,12 +23,13 @@ const Display = () => {
     }, [])
 
 return (
-    <div>
+    <div style={{overflowY: "scroll", height:"80vh"}}>
     <ul className='list-group' style={{marginBottom: "60px"}}>
         {conversations.length > 0 ?
             conversations.map(msg => (
                 <li className='list-group-item'>
-                    <strong>{msg.username}:  "{msg.message}"  on "{moment(msg.timestamp).format('LLLL')}"</strong>
+                    <img src={`https://api.adorable.io/avatars/50/${msg.username}.png`}/>
+                    <strong>{msg.username}:&nbsp; "{msg.message}"&nbsp; &nbsp; on&nbsp; "{moment(msg.timestamp).format('LLLL')}"</strong>
                 </li>
             ))
             : ""

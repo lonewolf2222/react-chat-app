@@ -19,7 +19,7 @@ function App() {
       <page>
       <h2 style={{textAlign:"center"}}>Next Chat App</h2>
       <div style={{display:"flex"}}>
-        <div style={{flex: 2}}>
+        <div style={{flex: 3}}>
           <h2 style={{textAlign:"center"}}>Conversations</h2>
           <Display/>
         </div>
