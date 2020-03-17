@@ -4,12 +4,12 @@ import Socket from '../utils/socket'
 
 const Display = () => {
 
-    const scrollToBottom = () => {
-        const page = document.getElementsByTagName("body")
-        document.body.scrollTop = document.body.scrollHeight
-        }
+    // const scrollToBottom = () => {
+    //     const page = document.getElementsByTagName("body")
+    //     document.body.scrollTop = document.body.scrollHeight
+    //     }
     
-    scrollToBottom()
+    // scrollToBottom()
 
     const[conversations, setConversations] = useState([])
 

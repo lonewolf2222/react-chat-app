@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {Form, Button} from 'react-bootstrap'
-import moment from 'moment'
 import Socket from '../utils/socket'
 
 const MessageInput = () => {
