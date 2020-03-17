@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MessageInput from './components/MessageInput'
+import Display from './components/Display'
+import UserList from './components/UserList'
+import Socket from './utils/socket'
+
+
 
 function App() {
+
+  useEffect(() => {
+    Socket.emit('NEW_USER')
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <page>
+      <h2 style={{textAlign:"center"}}>Next Chat App</h2>
+      <div style={{display:"flex"}}>
+        <div style={{flex: 2}}>
+          <h2 style={{textAlign:"center"}}>Conversations</h2>
+          <Display/>
+        </div>
+        <div style={{flex:1}}>
+          <h2 style={{textAlign:"center"}}> User List</h2>
+        <UserList/>
+      </div>
+      </div>
+     <MessageInput/>
+     </page>
     </div>
   );
 }
